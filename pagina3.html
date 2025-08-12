@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caballos Frisones - Elegancia y Nobleza</title>
+    <style>
+        :root {
+            --friso-black: #1a1a1a;
+            --gold-accent: #d4af37;
+            --cream-bg: #f8f4e9;
+            --text-dark: #333333;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--cream-bg);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold-accent);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 3em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            margin-top: 15px;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+        }
+        
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .horse-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--gold-accent);
+        }
+        
+        .horse-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .horse-image-container {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .horse-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .horse-card:hover .horse-image {
+            transform: scale(1.05);
+        }
+        
+        .horse-info {
+            padding: 25px;
+        }
+        
+        .horse-name {
+            font-size: 1.8em;
+            margin: 0 0 10px 0;
+            color: var(--friso-black);
+            font-weight: normal;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .horse-details {
+            margin-bottom: 20px;
+        }
+        
+        .detail-row {
+            display: flex;
+            margin-bottom: 8px;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            min-width: 120px;
+            color: var(--friso-black);
+        }
+        
+        .pedigree {
+            font-style: italic;
+            margin: 15px 0;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .description {
+            margin: 20px 0;
+            line-height: 1.7;
+        }
+        
+        .price {
+            font-size: 1.5em;
+            color: var(--gold-accent);
+            text-align: right;
+            margin: 25px 0 15px;
+            font-weight: bold;
+        }
+        
+        .contact-btn {
+            display: block;
+            text-align: center;
+            background-color: var(--friso-black);
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+        
+        .contact-btn:hover {
+            background-color: var(--gold-accent);
+            color: var(--friso-black);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px 20px;
+            background-color: var(--friso-black);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .footer-logo {
+            font-size: 2em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .footer-contact {
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+        
+        .certification {
+            font-size: 0.9em;
+            margin-top: 30px;
+            color: #aaa;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .catalog {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Caballos Frisones</h1>
+        <p class="subtitle">Elegancia • Nobleza • Tradición</p>
+    </header>
+    
+    <div class="intro">
+        <p>Los caballos frisones, originarios de los Países Bajos, son conocidos por su pelaje negro azabache, crines exuberantes y movimientos elegantes. En nuestro criadero, dedicado a la excelencia de esta raza, seleccionamos solo los mejores ejemplares con pedigrí KFPS (Real Sociedad del Caballo Frisón). Cada uno de nuestros frisones representa lo mejor de la raza en conformación, temperamento y habilidades ecuestres.</p>
+    </div>
+    
+    <div class="catalog">
+        <!-- Frisón 1 -->
+        <div class="horse-card">
+            <div class="horse-image-container">
+                <img src="https://images.unsplash.com/photo-1553284965-e2815db2e5a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Frisón Eclipse" class="horse-image">
+            </div>
+            <div class="horse-info">
+                <h3 class="horse-name">Eclipse</h3>
+                
+                <p class="pedigree">Por Titán 468 (Ster Preferent) - Marelia 432 (Ster Preferent)</p>
+                
+                <div class="horse-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Edad:</span>
+                        <span>5 años</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Sexo:</span>
+                        <span>Macho</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Altura:</span>
+                        <span>1.68 m</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Registro:</span>
+                        <span>KFPS 20234567</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Premios:</span>
+                        <span>Ster Preferent, Campeón Joven Semental</span>
+                    </div>
+                </div>
+                
+                <p class="description">
+                    Eclipse es un semental impresionante con movimientos elevados y una presencia magnética. Destaca en doma clásica gracias a su excelente temperamento y capacidad de aprendizaje. Su crin y cola son excepcionalmente gruesas y onduladas.
+                </p>
+                
+                <p class="price">€35,000</p>
+                <a href="#contacto" class="contact-btn">CONSULTAR DISPONIBILIDAD</a>
+            </div>
+        </div>
+        
+        <!-- Frisón 2 -->
+        <div class="horse-card">
+            <div class="horse-image-container">
+                <img src="https://images.unsplash.com/photo-1506224477000-07aa8a76be20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Frisón Reina de la Noche" class="horse-image">
+            </div>
+            <div class="horse-info">
+                <h3 class="horse-name">Reina de la Noche</h3>
+                
+                <p class="pedigree">Por Jasper 456 (Modelo) - Freya 321 (Ster Preferent)</p>
+                
+                <div class="horse-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Edad:</span>
+                        <span>7 años</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Sexo:</span>
+                        <span>Hembra</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Altura:</span>
+                        <span>1.63 m</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Registro:</span>
+                        <span>KFPS 20198765</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Premios:</span>
+                        <span>Ster, Excelente para cría</span>
+                    </div>
+                </div>
+                
+                <p class="description">
+                    Magnífica yegua con excelentes líneas de cría. Ha producido dos potros premiados y es ideal para doma clásica o enganche. Movimientos armoniosos y gran disposición al trabajo. Temperamento equilibrado y muy afectuosa.
+                </p>
+                
+                <p class="price">€28,500</p>
+                <a href="#contacto" class="contact-btn">CONSULTAR DISPONIBILIDAD</a>
+            </div>
+        </div>
+        
+        <!-- Frisón 3 -->
+        <div class="horse-card">
+            <div class="horse-image-container">
+                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Frisón Príncipe de Ébano" class="horse-image">
+            </div>
+            <div class="horse-info">
+                <h3 class="horse-name">Príncipe de Ébano</h3>
+                
+                <p class="pedigree">Por Wicher 512 (Modelo) - Danira 378 (Ster)</p>
+                
+                <div class="horse-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Edad:</span>
+                        <span>3 años</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Sexo:</span>
+                        <span>Macho</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Altura:</span>
+                        <span>1.65 m (en crecimiento)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Registro:</span>
+                        <span>KFPS 20218934</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Premios:</span>
+                        <span>1er Premio Morfología, Potro Estrella 2021</span>
+                    </div>
+                </div>
+                
+                <p class="description">
+                    Joven promesa con extraordinarias proporciones y movimientos naturales para la doma alta. Pelaje negro azabache sin marcas blancas. Excelente carácter y rápido aprendizaje. Ideal para jinetes que buscan un frisón para competición.
+                </p>
+                
+                <p class="price">€42,000</p>
+                <a href="#contacto" class="contact-btn">CONSULTAR DISPONIBILIDAD</a>
+            </div>
+        </div>
+        
+        <!-- Frisón 4 -->
+        <div class="horse-card">
+            <div class="horse-image-container">
+                <img src="https://images.unsplash.com/photo-1553284965-e2815db2e5a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Frisón Estrella Polar" class="horse-image">
+            </div>
+            <div class="horse-info">
+                <h3 class="horse-name">Estrella Polar</h3>
+                
+                <p class="pedigree">Por Teunis 423 (Ster Preferent) - Wilhelmina 389 (Modelo)</p>
+                
+                <div class="horse-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Edad:</span>
+                        <span>4 años</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Sexo:</span>
+                        <span>Hembra</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Altura:</span>
+                        <span>1.60 m</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Registro:</span>
+                        <span>KFPS 20205678</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Premios:</span>
+                        <span>Ster, Campeona Enganche Joven</span>
+                    </div>
+                </div>
+                
+                <p class="description">
+                    Yegua excepcional para enganche, con movimientos poderosos y equilibrados. Ha sido entrenada para carruaje de cuatro enganche. Temperamento alegre pero obediente. Excelentes resultados en inspecciones de raza con altas puntuaciones en marcha.
+                </p>
+                
+                <p class="price">€38,000</p>
+                <a href="#contacto" class="contact-btn">CONSULTAR DISPONIBILIDAD</a>
+            </div>
+        </div>
+        
+        <!-- Frisón 5 -->
+        <div class="horse-card">
+            <div class="horse-image-container">
+                <img src="https://images.unsplash.com/photo-1506224477000-07aa8a76be20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Frisón Barón Negro" class="horse-image">
+            </div>
+            <div class="horse-info">
+                <h3 class="horse-name">Barón Negro</h3>
+                
+                <p class="pedigree">Por Othello 412 (Modelo) - Danira 378 (Ster)</p>
+                
+                <div class="horse-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Edad:</span>
+                        <span>8 años</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Sexo:</span>
+                        <span>Macho</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Altura:</span>
+                        <span>1.70 m</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Registro:</span>
+                        <span>KFPS 20175689</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Premios:</span>
+                        <span>Modelo, Mejor Movimientos 2019</span>
+                    </div>
+                </div>
+                
+                <p class="description">
+                    Semental de exposición con una presencia imponente. Ha sido utilizado con éxito en programas de cría, produciendo potros premiados. Entrenado en doma clásica hasta nivel Intermedio I. Movimientos elevados y gran capacidad de reunión.
+                </p>
+                
+                <p class="price">€55,000</p>
+                <a href="#contacto" class="contact-btn">CONSULTAR DISPONIBILIDAD</a>
+            </div>
+        </div>
+        
+        <!-- Frisón 6 -->
+        <div class="horse-card">
+            <div class="horse-image-container">
+                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Frisón Luna de Obsidiana" class="horse-image">
+            </div>
+            <div class="horse-info">
+                <h3 class="horse-name">Luna de Obsidiana</h3>
+                
+                <p class="pedigree">Por Adel 401 (Ster Preferent) - Jessica 345 (Ster)</p>
+                
+                <div class="horse-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Edad:</span>
+                        <span>2 años</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Sexo:</span>
+                        <span>Hembra</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Altura:</span>
+                        <span>1.58 m (en crecimiento)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Registro:</span>
+                        <span>KFPS 20223456</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Premios:</span>
+                        <span>Mejor Potra Inspectie 2022</span>
+                    </div>
+                </div>
+                
+                <p class="description">
+                    Joven potra con un futuro prometedor. Excelentes líneas de cría y movimientos naturales para la doma. Muy dócil y fácil de manejar. Ideal para propietarios que buscan desarrollar un frisón desde joven. Crin y cola excepcionalmente abundantes.
+                </p>
+                
+                <p class="price">€32,000</p>
+                <a href="#contacto" class="contact-btn">CONSULTAR DISPONIBILIDAD</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer id="contacto">
+        <div class="footer-logo">FRISONES DE ÉLITE</div>
+        <div class="footer-contact">
+            <p><strong>Criadero registrado KFPS n° 34521</strong></p>
+            <p>Camino de los Frisones, 28410 · Madrid · España</p>
+            <p>Teléfono: +34 910 123 456 · Email: info@frisoneselite.com</p>
+        </div>
+        <div class="certification">
+            Todos nuestros frisones cuentan con certificación KFPS, pasaportes equinos y exámenes veterinarios completos.
+            <br>Transporte internacional disponible.
+        </div>
+    </footer>
+</body>
+</html>
