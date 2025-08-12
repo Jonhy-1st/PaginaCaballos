@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Caballos de Raza Española</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #8B4513;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .horse-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .horse-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .horse-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .horse-info {
+            padding: 20px;
+        }
+        
+        .horse-name {
+            font-size: 1.5em;
+            margin: 0 0 10px 0;
+            color: #8B4513;
+        }
+        
+        .horse-details {
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #2E8B57;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background-color: #8B4513;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-btn:hover {
+            background-color: #A0522D;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #8B4513;
+            color: white;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Caballos de Raza Española</h1>
+        <p class="subtitle">Pura Raza Española - Excelencia y Elegancia</p>
+    </header>
+    
+    <div class="catalog">
+        <!-- Caballo 1 -->
+        <div class="horse-card">
+            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Caballo Español 1" class="horse-image">
+            <div class="horse-info">
+                <h3 class="horse-name">Don Pelayo</h3>
+                <div class="horse-details">
+                    <p><strong>Edad:</strong> 5 años</p>
+                    <p><strong>Sexo:</strong> Macho</p>
+                    <p><strong>Altura:</strong> 1.62 m</p>
+                    <p><strong>Linaje:</strong> Cartujano</p>
+                    <p><strong>Adiestramiento:</strong> Doma Clásica</p>
+                </div>
+                <p class="price">25,000 €</p>
+                <a href="#contacto" class="contact-btn">Más información</a>
+            </div>
+        </div>
+        
+        <!-- Caballo 2 -->
+        <div class="horse-card">
+            <img src="https://images.unsplash.com/photo-1553284965-e2815db2e5a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Caballo Español 2" class="horse-image">
+            <div class="horse-info">
+                <h3 class="horse-name">Reina Isabel</h3>
+                <div class="horse-details">
+                    <p><strong>Edad:</strong> 7 años</p>
+                    <p><strong>Sexo:</strong> Hembra</p>
+                    <p><strong>Altura:</strong> 1.58 m</p>
+                    <p><strong>Linaje:</strong> Yeguada Militar</p>
+                    <p><strong>Adiestramiento:</strong> Alta Escuela</p>
+                </div>
+                <p class="price">32,000 €</p>
+                <a href="#contacto" class="contact-btn">Más información</a>
+            </div>
+        </div>
+        
+        <!-- Caballo 3 -->
+        <div class="horse-card">
+            <img src="https://images.unsplash.com/photo-1506224477000-07aa8a76be20?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Caballo Español 3" class="horse-image">
+            <div class="horse-info">
+                <h3 class="horse-name">Cid Campeador</h3>
+                <div class="horse-details">
+                    <p><strong>Edad:</strong> 4 años</p>
+                    <p><strong>Sexo:</strong> Macho</p>
+                    <p><strong>Altura:</strong> 1.65 m</p>
+                    <p><strong>Linaje:</strong> Escalera</p>
+                    <p><strong>Adiestramiento:</strong> Trabajo en campo</p>
+                </div>
+                <p class="price">18,500 €</p>
+                <a href="#contacto" class="contact-btn">Más información</a>
+            </div>
+        </div>
+        
+        <!-- Caballo 4 -->
+        <div class="horse-card">
+            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Caballo Español 4" class="horse-image">
+            <div class="horse-info">
+                <h3 class="horse-name">Duquesa de Alba</h3>
+                <div class="horse-details">
+                    <p><strong>Edad:</strong> 6 años</p>
+                    <p><strong>Sexo:</strong> Hembra</p>
+                    <p><strong>Altura:</strong> 1.60 m</p>
+                    <p><strong>Linaje:</strong> Cartujano</p>
+                    <p><strong>Adiestramiento:</strong> Paseo y exhibición</p>
+                </div>
+                <p class="price">28,000 €</p>
+                <a href="#contacto" class="contact-btn">Más información</a>
+            </div>
+        </div>
+        
+        <!-- Caballo 5 -->
+        <div class="horse-card">
+            <img src="https://images.unsplash.com/photo-1553284965-e2815db2e5a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Caballo Español 5" class="horse-image">
+            <div class="horse-info">
+                <h3 class="horse-name">Sultán de Jerez</h3>
+                <div class="horse-details">
+                    <p><strong>Edad:</strong> 8 años</p>
+                    <p><strong>Sexo:</strong> Macho</p>
+                    <p><strong>Altura:</strong> 1.63 m</p>
+                    <p><strong>Linaje:</strong> Hierro del Bocado</p>
+                    <p><strong>Adiestramiento:</strong> Doma Vaquera</p>
+                </div>
+                <p class="price">35,000 €</p>
+                <a href="#contacto" class="contact-btn">Más información</a>
+            </div>
+        </div>
+        
+        <!-- Caballo 6 -->
+        <div class="horse-card">
+            <img src="https://images.unsplash.com/photo-1506224477000-07aa8a76be20?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Caballo Español 6" class="horse-image">
+            <div class="horse-info">
+                <h3 class="horse-name">Estrella Andaluza</h3>
+                <div class="horse-details">
+                    <p><strong>Edad:</strong> 3 años</p>
+                    <p><strong>Sexo:</strong> Hembra</p>
+                    <p><strong>Altura:</strong> 1.55 m</p>
+                    <p><strong>Linaje:</strong> Yeguada Real</p>
+                    <p><strong>Adiestramiento:</strong> Potro en formación</p>
+                </div>
+                <p class="price">15,000 €</p>
+                <a href="#contacto" class="contact-btn">Más información</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer id="contacto">
+        <h2>Contacto</h2>
+        <p>Teléfono: +34 600 123 456</p>
+        <p>Email: info@caballosrazaespañola.com</p>
+        <p>Ubicación: Jerez de la Frontera, Cádiz, España</p>
+        <p>© 2023 Yeguada Pura Raza Española. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
