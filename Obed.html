@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Comida para Caballos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .header {
+            background-color: #2c8a58;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+        }
+        .product-title {
+            font-size: 1.2em;
+            margin: 0 0 10px;
+            color: #2c8a58;
+        }
+        .product-description {
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            color: #666;
+        }
+        .product-price {
+            font-weight: bold;
+            color: #e67e22;
+            font-size: 1.1em;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #2c8a58;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #1f6a42;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c8a58;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Catálogo de Comida para Caballos</h1>
+        <p>Nutrición de calidad para el mejor desempeño equino</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-button">← Volver a Inicio</a>
+
+        <div class="product-grid">
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=Alfalfa+Premium" alt="Alfalfa Premium" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Alfalfa Premium</h3>
+                    <p class="product-description">Heno de alfalfa de alta calidad, rico en proteínas y calcio para caballos en crecimiento o lactantes.</p>
+                    <p class="product-price">$15.99 / fardo</p>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=Mezcla+Granos" alt="Mezcla de Granos" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Mezcla Energética</h3>
+                    <p class="product-description">Mezcla balanceada de avena, maíz y cebada para caballos de trabajo intenso.</p>
+                    <p class="product-price">$12.50 / 10kg</p>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=Suplemento+Vitaminico" alt="Suplemento Vitamínico" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Suplemento Vitamínico</h3>
+                    <p class="product-description">Complejo vitamínico-mineral para cubrir todas las necesidades nutricionales de tu caballo.</p>
+                    <p class="product-price">$24.99 / 5kg</p>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=Snacks+Naturales" alt="Snacks Naturales" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Snacks Naturales</h3>
+                    <p class="product-description">Deliciosos snacks de manzana y zanahoria deshidratada para premiar a tu caballo.</p>
+                    <p class="product-price">$8.99 / bolsa</p>
+                </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=Heno+Timote" alt="Heno de Timote" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Heno de Timote</h3>
+                    <p class="product-description">Heno de pasto timote, bajo en azúcares, ideal para caballos con necesidades especiales.</p>
+                    <p class="product-price">$13.75 / fardo</p>
+                </div>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=Alimento+Senior" alt="Alimento Senior" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Alimento Senior</h3>
+                    <p class="product-description">Fórmula especial para caballos mayores, fácil de masticar y digerir.</p>
+                    <p class="product-price">$18.50 / 10kg</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2023 Nutrición Equina Premium - Todos los derechos reservados</p>
+        <p>Contacto: info@nutricionequina.com | Tel: 555-123-4567</p>
+    </div>
+</body>
+</html>
