@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmacia Equina - Medicamentos para Caballos</title>
+    <style>
+        :root {
+            --vet-blue: #1e88e5;
+            --vet-dark: #005cb2;
+            --vet-light: #6ab7ff;
+            --vet-bg: #f5f9ff;
+            --text-dark: #333;
+            --text-light: #666;
+            --emergency: #e53935;
+        }
+        
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--vet-bg);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, var(--vet-blue), var(--vet-dark));
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            margin-top: 10px;
+            font-weight: 300;
+        }
+        
+        .emergency-banner {
+            background-color: var(--emergency);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+        
+        .category-btn {
+            padding: 8px 15px;
+            background-color: white;
+            border: 1px solid var(--vet-light);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--vet-blue);
+            color: white;
+            border-color: var(--vet-blue);
+        }
+        
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--vet-blue);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-name {
+            font-size: 1.3em;
+            margin: 0 0 10px 0;
+            color: var(--vet-dark);
+        }
+        
+        .laboratory {
+            font-size: 0.9em;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+        
+        .product-description {
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+        
+        .product-details {
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+        
+        .detail-row {
+            display: flex;
+            margin-bottom: 5px;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            min-width: 120px;
+        }
+        
+        .prescription {
+            color: var(--emergency);
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .price-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .price {
+            font-weight: bold;
+            font-size: 1.3em;
+            color: var(--vet-dark);
+        }
+        
+        .add-to-cart {
+            background-color: var(--vet-blue);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--vet-dark);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: var(--vet-dark);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .disclaimer {
+            font-size: 0.8em;
+            margin-top: 40px;
+            padding: 15px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            border-left: 4px solid var(--emergency);
+        }
+        
+        @media (max-width: 768px) {
+            .catalog {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Farmacia Equina Profesional</h1>
+        <p class="subtitle">Medicamentos y productos veterinarios para caballos</p>
+    </header>
+    
+    <div class="emergency-banner">
+        ☎ Línea de emergencia veterinaria: 24 horas - 900 123 456
+    </div>
+    
+    <div class="categories">
+        <div class="category-btn active">Todos</div>
+        <div class="category-btn">Antiinflamatorios</div>
+        <div class="category-btn">Antibióticos</div>
+        <div class="category-btn">Desparasitarios</div>
+        <div class="category-btn">Suplementos</div>
+        <div class="category-btn">Vacunas</div>
+        <div class="category-btn">Cuidado de cascos</div>
+        <div class="category-btn">Primeros auxilios</div>
+    </div>
+    
+    <div class="catalog">
+        <!-- Producto 1 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/500x300?text=Antiinflamatorio" alt="Flunixina Meglumine" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Flunixina Meglumine</h3>
+                <p class="laboratory">Laboratorio: EquiPharma</p>
+                <p class="product-description">
+                    Antiinflamatorio no esteroideo (AINE) para el control del dolor y la fiebre en caballos. Indicado para cólicos, laminitis y procesos inflamatorios agudos.
+                </p>
+                <div class="product-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Presentación:</span>
+                        <span>Vial 50ml (50mg/ml)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Dosis:</span>
+                        <span>1.1 mg/kg cada 24h</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Conservación:</span>
+                        <span>15-30°C</span>
+                    </div>
+                </div>
+                <p class="prescription">REQUIERE RECETA VETERINARIA</p>
+                <div class="price-container">
+                    <span class="price">€42.90</span>
+                    <button class="add-to-cart">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Producto 2 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/500x300?text=Desparasitario" alt="Ivermectina" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Ivermectina EQ</h3>
+                <p class="laboratory">Laboratorio: VetScience</p>
+                <p class="product-description">
+                    Desparasitante de amplio espectro contra nematodos gastrointestinales, pulmones, estróngilos y parásitos externos (ácaros, piojos).
+                </p>
+                <div class="product-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Presentación:</span>
+                        <span>Pasta oral 6.08g</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Dosis:</span>
+                        <span>200 mcg/kg</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Caducidad:</span>
+                        <span>24 meses</span>
+                    </div>
+                </div>
+                <div class="price-container">
+                    <span class="price">€18.50</span>
+                    <button class="add-to-cart">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Producto 3 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/500x300?text=Suplemento" alt="Condroitina" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">CondroEQ Plus</h3>
+                <p class="laboratory">Laboratorio: EquiNutri</p>
+                <p class="product-description">
+                    Suplemento nutricional con condroitín sulfato, glucosamina, MSM y ácido hialurónico para el soporte articular en caballos deportivos y senior.
+                </p>
+                <div class="product-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Presentación:</span>
+                        <span>1kg (30 días)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Dosis:</span>
+                        <span>30g/día</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Sabor:</span>
+                        <span>Manzana</span>
+                    </div>
+                </div>
+                <div class="price-container">
+                    <span class="price">€65.00</span>
+                    <button class="add-to-cart">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Producto 4 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/500x300?text=Antibi%C3%B3tico" alt="Penicilina" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Penicilina G Procaína</h3>
+                <p class="laboratory">Laboratorio: VetPharma</p>
+                <p class="product-description">
+                    Antibiótico beta-lactámico para el tratamiento de infecciones bacterianas sensibles. Indicado para abscesos, infecciones respiratorias y de tejidos blandos.
+                </p>
+                <div class="product-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Presentación:</span>
+                        <span>Frasco 100ml (300,000 UI/ml)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Dosis:</span>
+                        <span>20,000 UI/kg cada 24h</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Conservación:</span>
+                        <span>2-8°C</span>
+                    </div>
+                </div>
+                <p class="prescription">REQUIERE RECETA VETERINARIA</p>
+                <div class="price-container">
+                    <span class="price">€28.75</span>
+                    <button class="add-to-cart">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Producto 5 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/500x300?text=Vacuna" alt="Vacuna Tétanos" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Vacuna Tétanos Equino</h3>
+                <p class="laboratory">Laboratorio: EquiVax</p>
+                <p class="product-description">
+                    Vacuna para la inmunización activa contra el tétanos en equinos. Proporciona protección durante 12-24 meses después de la primovacunación.
+                </p>
+                <div class="product-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Presentación:</span>
+                        <span>Vial 10 dosis</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Esquema:</span>
+                        <span>2 dosis iniciales + refuerzo anual</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Conservación:</span>
+                        <span>2-8°C (no congelar)</span>
+                    </div>
+                </div>
+                <div class="price-container">
+                    <span class="price">€45.30</span>
+                    <button class="add-to-cart">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Producto 6 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/500x300?text=Primeros+Auxilios" alt="Pomada Cicatrizante" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Hidrogel EQ Care</h3>
+                <p class="laboratory">Laboratorio: EquiCare</p>
+                <p class="product-description">
+                    Pomada cicatrizante y regeneradora para heridas, rozaduras y quemaduras. Formulación con plata coloidal que previene infecciones y promueve la curación.
+                </p>
+                <div class="product-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Presentación:</span>
+                        <span>Tubo 250g</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Aplicación:</span>
+                        <span>1-2 veces al día</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Caducidad:</span>
+                        <span>18 meses</span>
+                    </div>
+                </div>
+                <div class="price-container">
+                    <span class="price">€22.40</span>
+                    <button class="add-to-cart">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="disclaimer">
+        <strong>ADVERTENCIA:</strong> Los medicamentos de prescripción veterinaria requieren receta emitida por un veterinario colegiado. Este catálogo es solo informativo. Consulte siempre con su veterinario antes de administrar cualquier medicamento a su caballo. Los precios son orientativos y pueden variar.
+    </div>
+    
+    <footer>
+        <h3>Farmacia Equina Profesional</h3>
+        <p>Distribuidor autorizado de medicamentos veterinarios | Registro Sanitario: ES-12345-VET</p>
+        <p>📞 900 100 200 | ✉ info@farmaciaequina.com</p>
+        <p>Horario: L-V 9:00-14:00 / 16:00-20:00 | S 10:00-14:00</p>
+        <p>© 2023 Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
