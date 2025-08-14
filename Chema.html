@@ -1,0 +1,302 @@
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guía básica: Cómo cuidar un caballo</title>
+  <meta name="description" content="Consejos prácticos y calendario de cuidados para mantener a tu caballo sano y feliz." />
+  <style>
+    :root{
+      --bg:#0f172a;        /* slate-900 */
+      --panel:#111827;     /* gray-900 */
+      --muted:#94a3b8;     /* slate-400 */
+      --text:#e5e7eb;      /* gray-200 */
+      --brand:#22c55e;     /* green-500 */
+      --card:#0b1225;      /* dark panel */
+      --accent:#2563eb;    /* blue-600 */
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+        Noto Sans, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1f2937 0, rgba(2,6,23,0) 60%),
+                  radial-gradient(800px 500px at 110% 10%, #111827 0, rgba(2,6,23,0) 50%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(1.4) blur(8px);
+      background: rgba(2,6,23,.7);
+      border-bottom: 1px solid rgba(148,163,184,.15);
+    }
+    .wrap{max-width: 1100px; margin: 0 auto; padding: 1.2rem 1rem;}
+    nav a{color: var(--muted); margin-right: 1rem; text-decoration: none; font-weight: 600}
+    nav a:hover, nav a:focus{color: var(--text)}
+    .hero{padding: 3rem 1rem 2rem; text-align: center}
+    h1{font-size: clamp(1.8rem, 2.4vw + 1rem, 3rem); margin: 0 0 .5rem}
+    .subtitle{color: var(--muted); max-width: 70ch; margin: .25rem auto 0}
+
+    .grid{display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid rgba(148,163,184,.15);
+      border-radius: 16px; padding: 1rem 1rem 1.1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .card h3{margin-top:.2rem; margin-bottom:.3rem}
+    .tag{display:inline-block; padding:.2rem .5rem; border-radius:999px; font-size:.75rem; background:#12213d; color:#bfdbfe; border:1px solid rgba(59,130,246,.3)}
+
+    section{padding: 2rem 1rem}
+    section h2{font-size:1.4rem; margin:0 0 .75rem}
+
+    .tips li{margin:.35rem 0}
+
+    .table-wrap{overflow:auto; border:1px solid rgba(148,163,184,.15); border-radius:14px}
+    table{width:100%; border-collapse: collapse; min-width:680px}
+    th, td{padding:.8rem .9rem; text-align:left}
+    thead th{position:sticky; top:0; background:#0b1225}
+    tbody tr:nth-child(even){background: rgba(255,255,255,.03)}
+    tbody tr:hover{background: rgba(37,99,235,.06)}
+
+    .callout{
+      background: #062b17;
+      border: 1px solid rgba(34,197,94,.35);
+      color: #bbf7d0; border-radius: 14px; padding: 1rem; margin: 1rem 0;
+    }
+    footer{color:var(--muted); text-align:center; padding: 2rem 1rem}
+    .small{font-size:.9rem}
+    .emoji{font-size:1.2em}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; gap:1rem">
+      <div style="display:flex; align-items:center; gap:.75rem">
+        <span class="emoji" aria-hidden="true">🐴</span>
+        <strong>Guía de cuidado equino</strong>
+      </div>
+      <nav aria-label="Secciones de la página">
+        <a href="#basicos">Básicos</a>
+        <a href="#salud">Salud</a>
+        <a href="#ejercicio">Ejercicio</a>
+        <a href="#higiene">Higiene</a>
+        <a href="#seguridad">Seguridad</a>
+        <a href="#calendario">Calendario</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Cómo cuidar un caballo: Guía rápida y práctica</h1>
+      <p class="subtitle">Todo lo esencial sobre alimentación, agua, alojamiento, salud, ejercicio e higiene para mantener a tu caballo sano, seguro y feliz.</p>
+    </section>
+
+    <section id="basicos" class="wrap">
+      <h2>Fundamentos diarios</h2>
+      <div class="grid">
+        <article class="card" aria-labelledby="alimento-t">
+          <span class="tag">🍀 Alimentación</span>
+          <h3 id="alimento-t">Forraje primero</h3>
+          <ul class="tips">
+            <li>Ofrece <strong>heno/forraje de calidad</strong> a libre acceso o fraccionado (1.5–2% del peso corporal/día).</li>
+            <li>Concentrados solo si lo indica el veterinario o el trabajo lo requiere.
+            </li>
+            <li>Introduce cambios de dieta de forma <em>gradual</em> (7–10 días).</li>
+          </ul>
+        </article>
+        <article class="card" aria-labelledby="agua-t">
+          <span class="tag">💧 Agua</span>
+          <h3 id="agua-t">Agua fresca y limpia</h3>
+          <ul class="tips">
+            <li>Proveer <strong>24/7</strong>; un adulto bebe 25–45 litros/día según clima y trabajo.</li>
+            <li>Limpia cubetas/bebederos a diario.</li>
+          </ul>
+        </article>
+        <article class="card" aria-labelledby="aloj-t">
+          <span class="tag">🏡 Alojamiento</span>
+          <h3 id="aloj-t">Espacio, sombra y compañía</h3>
+          <ul class="tips">
+            <li>Corral/potrero seguro, <strong>cercas íntegras</strong> y sin objetos cortantes.</li>
+            <li><strong>Sombra y refugio</strong> contra sol, viento y lluvia.</li>
+            <li>Los caballos son sociales: permite contacto/compañía cuando sea posible.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout" role="note">
+        <strong>Pro tip:</strong> Mantén un registro sencillo (notas o app) con fechas de vacunas, desparasitación, herraje, peso y observaciones.
+      </div>
+    </section>
+
+    <section id="salud" class="wrap">
+      <h2>Salud y prevención</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Plan veterinario</h3>
+          <ul class="tips">
+            <li>Revisión general cada 6–12 meses.</li>
+            <li>Esquema de <strong>vacunación</strong> según zona (tétanos, influenza, encefalitis, etc.).</li>
+            <li><strong>Desparasitación</strong> estratégica (coproparasitología + producto indicado por el vet.).</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Odontología</h3>
+          <ul class="tips">
+            <li>Chequeo dental cada 6–12 meses; limado si hay puntas que lastiman.</li>
+            <li>Señales de alerta: babeo, dejar alimento, bajar de peso, cabeceo al embuchar.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Cascos y herraje</h3>
+          <ul class="tips">
+            <li>Herrero cada 6–8 semanas (recorte o herraje según uso y terreno).</li>
+            <li>Mantén cascos limpios y secos; revisa grietas, calor o mal olor.</li>
+          </ul>
+        </article>
+      </div>
+
+      <h3 class="small" style="margin-top:1rem">🚩 Señales que ameritan consulta rápida</h3>
+      <ul class="tips">
+        <li>Deja de comer o beber, posturas anormales, mirarse los flancos (posible cólico).</li>
+        <li>Claudicación evidente, heridas profundas, fiebre &gt; 38.5°C, diarrea persistente.</li>
+      </ul>
+    </section>
+
+    <section id="ejercicio" class="wrap">
+      <h2>Ejercicio y manejo</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Movimiento diario</h3>
+          <ul class="tips">
+            <li>Ideal: <strong>tiempo libre en potrero</strong> + trabajo ligero/progresivo.</li>
+            <li>Calentamiento 10–15 min y enfriamiento al final; evita trabajo intenso en calor extremo.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Mental y rutinas</h3>
+          <ul class="tips">
+            <li>Rutina estable (horas de comida y ejercicio) reduce estrés.</li>
+            <li>Enriquecimiento: caminatas, obstáculos sencillos, cambios de terreno.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="higiene" class="wrap">
+      <h2>Higiene</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Limpieza diaria</h3>
+          <ul class="tips">
+            <li>Cepillado para remover polvo y revisar piel; limpia cascos con gancho.</li>
+            <li>Baños solo cuando sea necesario; seca bien para evitar hongos.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Establo/corral</h3>
+          <ul class="tips">
+            <li>Retira estiércol a diario, ventila y controla moscas.</li>
+            <li>Revisa bebederos, comederos y cama (viruta/paja) limpios.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="seguridad" class="wrap">
+      <h2>Seguridad y equipo básico</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Para el caballo</h3>
+          <ul class="tips">
+            <li>Cabestro y soga en buen estado; manta/impermeable si el clima lo exige.</li>
+            <li>Botiquín: termómetro, gasas, vendas, antiséptico, tijeras y teléfono del vet.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Para el manejador</h3>
+          <ul class="tips">
+            <li>Usa <strong>casco</strong> para montar y botas cerradas al manejar.</li>
+            <li>Evita enrollar sogas en la mano, no camines directamente detrás del caballo.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="calendario" class="wrap">
+      <h2>Calendario de cuidados (ejemplo anual)</h2>
+      <div class="table-wrap" role="region" aria-label="Calendario de cuidados" tabindex="0">
+        <table aria-describedby="nota-cal">
+          <thead>
+            <tr>
+              <th>Tarea</th>
+              <th>Frecuencia</th>
+              <th>Responsable</th>
+              <th>Notas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Revisión veterinaria general</td>
+              <td>6–12 meses</td>
+              <td>Veterinario</td>
+              <td>Actualizar plan de vacunas y nutrición.</td>
+            </tr>
+            <tr>
+              <td>Vacunación</td>
+              <td>Según zona/plan</td>
+              <td>Veterinario</td>
+              <td>Registrar lote/fecha/caducidad.</td>
+            </tr>
+            <tr>
+              <td>Desparasitación</td>
+              <td>Estratégica</td>
+              <td>Veterinario</td>
+              <td>Basada en coproparasitología.</td>
+            </tr>
+            <tr>
+              <td>Odontología</td>
+              <td>6–12 meses</td>
+              <td>Vet. odontólogo</td>
+              <td>Revisar puntas/úlceras.</td>
+            </tr>
+            <tr>
+              <td>Herraje/recorte de cascos</td>
+              <td>6–8 semanas</td>
+              <td>Herrero</td>
+              <td>Más frecuente en climas húmedos.</td>
+            </tr>
+            <tr>
+              <td>Control de peso/condición</td>
+              <td>Mensual</td>
+              <td>Propietario</td>
+              <td>Anota cambios de apetito/energía.</td>
+            </tr>
+            <tr>
+              <td>Limpieza profunda de corral/establo</td>
+              <td>Semanal</td>
+              <td>Propietario</td>
+              <td>Desinfección moderada, sin químicos irritantes.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p id="nota-cal" class="small" style="margin-top:.6rem">Este calendario es orientativo. Consulta a tu veterinario para ajustar a tu región, uso y condición del caballo.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Hecho con ❤️ para cuidar mejor a tu caballo. Última actualización: <span id="fecha"></span>.</p>
+  </footer>
+
+  <script>
+    // Inserta fecha legible automáticamente
+    const el = document.getElementById('fecha');
+    const d = new Date();
+    const fmt = new Intl.DateTimeFormat('es-MX', { dateStyle: 'long' }).format(d);
+    el.textContent = fmt;
+  </script>
+</body>
+</html>
